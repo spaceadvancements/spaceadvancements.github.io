@@ -5,6 +5,11 @@ Highway Template
 https://templatemo.com/tm-520-highway
 
 */
+.csr-centre{
+  text-align: center;
+}
+
+
 .containerc {
   position: relative;
 }
@@ -871,7 +876,7 @@ footer a:hover {
 
 
 .more-about-us {
-  background-image: url(../img/star-2806970.jpg);
+  background-image: url(../img/black-hole-5868615.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
