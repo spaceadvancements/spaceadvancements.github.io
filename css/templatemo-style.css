@@ -1054,7 +1054,7 @@ footer a:hover {
   text-decoration: none;
 }
 
-.blog-post .text-content h2 {
+.blog-post .text-content h3 {
   margin-top: 5px;
   font-size: 36px;
   color: #fff;
@@ -1062,6 +1062,7 @@ footer a:hover {
   text-transform: capitalize;
   font-weight: 300;
 }
+
 
 .blog-post .text-content p {
   color: #bbb;
