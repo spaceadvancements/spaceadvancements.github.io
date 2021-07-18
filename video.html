@@ -53,6 +53,7 @@
 
 
                                 <div class="text-content">
+                                    <h2 id="titleOfVideo"></h2>
 
 
                                     <div class="tags-share">
@@ -76,6 +77,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <p id="discriptionOfVideo" style="text-align: center;"></p>
                                     <br><br><br>
                                     <div class="csr-centre">
                                         <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -214,6 +216,17 @@
     <script>
         window.onload = function () {
             document.getElementById("player").src = "https://www.youtube.com/embed/" + location.search.substring(1) + "?modestbranding=1&amp;rel=0&amp;showinfo=0&amp;autoplay=1";
+            
+            let url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+location.search.substring(1)+'&fields=items/snippet/title,items/snippet/description&key=AIzaSyCdbxC-P1B6JItx_zyEH_ElkNBmCzmNa_8';
+            fetch(url)
+                .then(res => res.json())
+                .then((out) => {
+                    titleOfVideo= out['items'][0]['snippet']['title'];
+                    discriptionOfVideo= out['items'][0]['snippet']['description'];
+                    document.getElementById("titleOfVideo").innerHTML =  titleOfVideo;
+                    document.getElementById("discriptionOfVideo").innerHTML =  discriptionOfVideo.split("_")[0];
+                })
+                .catch(err => { throw err });
         }
     </script>
 
